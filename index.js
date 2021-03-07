@@ -1,20 +1,22 @@
 import { Header, Nav, Main, Footer } from "./components";
-import {
-  AddPicturesToGallery,
-  GalleryPictures,
-  PrintFormOnSubmit
-} from "./lib";
+import * as state from "./store";
 
-function render() {
+// import {
+//   AddPicturesToGallery,
+//   GalleryPictures,
+//   PrintFormOnSubmit
+// } from "./lib";
+
+function render(st) {
   document.querySelector("#root").innerHTML = `
-  ${Header()}
-  ${Nav()}
-  ${Main()}
+  ${Header(st)}
+  ${Nav(state.Links)}
+  ${Main(st)}
   ${Footer()}
 `;
 }
 
-render();
+render(state.Home);
 
 // add menu toggle to bars icon in nav bar
 document
@@ -24,9 +26,9 @@ document
   );
 
 // populating gallery with pictures
-const gallerySection = document.querySelector("#gallery");
+// const gallerySection = document.querySelector("#gallery");
 // using modules to populate gallery with pictures
-AddPicturesToGallery(GalleryPictures, gallerySection);
+// AddPicturesToGallery(GalleryPictures, gallerySection);
 
 // handle form submission with PrintFormOnSubmit module
 const form = document.querySelector("form");
