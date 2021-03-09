@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "html-literal": "^1.1.0",
+    "lodash": "^4.17.21",
+    "navigo": "^8.9.1",
     "parcel-bundler": "^1.12.3"
   }
 }
